@@ -1,0 +1,123 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Intro -->
+<section class="intro">
+  <div class="main-container shadow">
+    <div class="intro-wrapper grid">
+      <div class="left-column">
+        <img class="shadow" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
+      </div>
+      <div class="right-column">
+        <h1>Yuri Sorokins</h1>
+        <!-- <p>I'm a self-taught web developer.</p> -->
+        <ul>
+          <li><i class="fab fa-github"></i></li>
+          <li><i class="fab fa-linkedin-in"></i></li>
+          <li><i class="fas fa-envelope"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About me -->
+<section class="about">
+  <div class="main-container shadow">
+    <div class="grid">
+      <div class="left-column">
+        <h2 class="border-bot">About Me</h2>
+        <p>I'm enjoying of creating web apps and
+        keen to learn new technologies.</p>
+      </div>
+      <div class="right-column">
+        <h2 class="border-bot">Skills</h2>
+        <ul>
+          <li><i class="fab fa-python"> Python (Django)</i></li>
+          <li><i class="fab fa-html5"> HTML</i></li>
+          <li><i class="fab fa-css3-alt"> CSS</i></li>
+          <li><i class="fab fa-js"> JavaScript</i></li>
+          <li><i class="fab fa-bootstrap"> Bootstrap</i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main -->
+<section class="main">
+  <div class="main-container shadow">
+    <h1>Portfolio & Past Projects</h1>
+    <p class="border-bot">Here are some of my recent web development project:</p>
+    <ul class="grid">
+      <li class="project">
+        <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
+        <div class="proj-preview">
+          <h2 class="proj-title">Learn With Lucy</h2>
+          <p class="proj-intro">Learning app for kids with rewards.</p>
+          <button class="modalBtn btn">More Info</button>
+        </div>
+      </li>
+      <li class="project">
+        <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
+        <div class="proj-preview">
+          <h2 class="proj-title">Furniture For You</h2>
+          <p class="proj-intro">Website for a bespoke furniture makers.</p>
+          <button class="modalBtn btn">More Info</button>
+        </div>
+      </li>
+      <li class="project">
+        <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
+        <div class="proj-preview">
+          <h2 class="proj-title">My portfolio webpage</h2>
+          <p class="proj-intro">Brief site to showcase my projects.</p>
+          <button class="modalBtn btn">More Info</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="ProjectInfo">
+  <div class="modal-content">
+    <span class="closeBtn" id="closeBtn">&times;</span>
+    <h1 class="flex">Request a Design Visit</h1>
+
+  </div>
+</div>
+
+<!-- Contact -->
+<section class="contact">
+  <div class="main-container shadow">
+    <h1 class="border-bot">Get In Touch</h1>
+      <form method="POST">
+        {% csrf_token %}
+      
+        <label for="name">Name</label>
+        <input type="text" id="name" name="firstname">      
+      
+        <label for="email">Email </label>
+        <input type="text" id="email" name="email">
+      
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject"></input>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" style="height:120px"></textarea>
+
+        <input class="btn" type="submit" value="Submit">
+      
+      </form>
+  </div>
+</section>
+
+>>>contact form (furn4u)
+>>>modal for projects
+>>>quote under name
+>>> change to postgres
+
+
+
+{% endblock content%}
