@@ -3,27 +3,29 @@
 
 {% block content %}
 <!-- Intro -->
-<section class="intro">
+<section class="intro container">
   <div class="main-container shadow">
     <div class="intro-wrapper grid">
       <div class="left-column">
         <img class="shadow" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
       </div>
       <div class="right-column">
-        <h1>Yuri Sorokins</h1>
-        <!-- <p>I'm a self-taught web developer.</p> -->
-        <ul>
+        <ul class="socials">
           <li><i class="fab fa-github"></i></li>
           <li><i class="fab fa-linkedin-in"></i></li>
           <li><i class="fas fa-envelope"></i></li>
         </ul>
+        <h1 class="border-bot">Yuri Sorokins</h1>
+        <p>“Persistence guarantees that results are inevitable.”</p>
+        <p><small class="quote-sm">― Paramahansa Yogananda</small></p>
+        <!-- <p>I'm a self-taught web developer.</p> -->
       </div>
     </div>
   </div>
 </section>
 
 <!-- About me -->
-<section class="about">
+<section class="about container">
   <div class="main-container shadow">
     <div class="grid">
       <div class="left-column">
@@ -46,33 +48,33 @@
 </section>
 
 <!-- Main -->
-<section class="main">
+<section class="main container">
   <div class="main-container shadow">
     <h1>Portfolio & Past Projects</h1>
     <p class="border-bot">Here are some of my recent web development project:</p>
     <ul class="grid">
-      <li class="project">
+      <li class="project  hover-shadow">
         <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
         <div class="proj-preview">
           <h2 class="proj-title">Learn With Lucy</h2>
           <p class="proj-intro">Learning app for kids with rewards.</p>
-          <button class="modalBtn btn">More Info</button>
+          <button class="modalBtn btn" onclick="modalOpen();currentSlide(1)">More Info</button>
         </div>
       </li>
-      <li class="project">
+      <li class="project  hover-shadow">
         <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
         <div class="proj-preview">
           <h2 class="proj-title">Furniture For You</h2>
           <p class="proj-intro">Website for a bespoke furniture makers.</p>
-          <button class="modalBtn btn">More Info</button>
+          <button class="modalBtn btn" onclick="modalOpen();currentSlide(2)">More Info</button>
         </div>
       </li>
-      <li class="project">
+      <li class="project  hover-shadow">
         <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
         <div class="proj-preview">
           <h2 class="proj-title">My portfolio webpage</h2>
           <p class="proj-intro">Brief site to showcase my projects.</p>
-          <button class="modalBtn btn">More Info</button>
+          <button class="modalBtn btn" onclick="modalOpen();currentSlide(3)">More Info</button>
         </div>
       </li>
     </ul>
@@ -80,16 +82,57 @@
 </section>
 
 <!-- Modal -->
-<div class="modal" id="ProjectInfo">
+<div class="modal container" id="ProjectInfo">
+
   <div class="modal-content">
-    <span class="closeBtn" id="closeBtn">&times;</span>
-    <h1 class="flex">Request a Design Visit</h1>
+
+    <div class="mySlides">
+      <span class="closeBtn" onclick="modalClose()">&times;</span>
+      <div class="numbertext">1 / 3</div>
+      <h1 class="flex">Request a Design Visit</h1>
+      <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins" style="width:100%">
+      <h1>BlaBla</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias maxime nam temporibus voluptas 
+        cum magni ipsa laboriosam dolores praesentium qua aspernatur voluptatem, necessitatibus laudantium 
+        repellat deleniti reprehenderit magnam cupiditate dignissimos.</p>
+    </div>
+    
+    <div class="mySlides">
+      <span class="closeBtn" onclick="modalClose()">&times;</span>
+      <div class="numbertext">2 / 3</div>
+      <h1 class="flex">Request a Design Visit</h1>
+      <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins" style="width:100%">
+      <h1>BlaBla</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias maxime nam temporibus voluptas
+        cum magni ipsa laboriosam dolores praesentium qua aspernatur voluptatem, necessitatibus laudantium
+        repellat deleniti reprehenderit magnam cupiditate dignissimos.</p>
+    </div>
+    
+    <div class="mySlides">
+      <span class="closeBtn" onclick="modalClose()">&times;</span>
+      <div class="numbertext">3 / 3</div>
+      <h1 class="flex">Request a Design Visit</h1>
+      <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins" style="width:100%">
+      <h1>BlaBla</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias maxime nam temporibus voluptas
+        cum magni ipsa laboriosam dolores praesentium qua aspernatur voluptatem, necessitatibus laudantium
+        repellat deleniti reprehenderit magnam cupiditate dignissimos.</p>
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
 
   </div>
 </div>
 
 <!-- Contact -->
-<section class="contact">
+<section class="contact container">
   <div class="main-container shadow">
     <h1 class="border-bot">Get In Touch</h1>
       <form method="POST">
@@ -113,10 +156,14 @@
   </div>
 </section>
 
->>>contact form (furn4u)
->>>modal for projects
->>>quote under name
+>>>contact form (furn4u) +
+>>>modal for projects +
+>>>quote under name +
+>>>succees message once form submited
 >>> change to postgres
+>>> conect projects to DB and make dynamic
+>>>responsive
+
 
 
 

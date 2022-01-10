@@ -45,11 +45,29 @@ img {
 .intro {
   background-color: var(--dark-color);
   color: var(--light-color);
-  padding: 50px;
+  /* padding: 25px 50px; */
 }
 
 .left-column img {
   max-width: 200px;
+}
+
+.right-column {
+  position: relative;
+}
+
+.socials {
+  position: absolute;
+  right: 0;
+  /* margin-bottom: 200px; */
+  /* padding-bottom: 50px; */
+  margin-top: -50px;
+}
+
+.quote-sm {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
 }
 
 .intro ul li {
@@ -63,14 +81,16 @@ img {
 .about {
   background-color: var(--dark-color);
   color: var(--light-color);
-  padding-bottom: 70px;
+  /* padding-bottom: 70px; */
+  /* padding: 25px 50px; */
 }
 
 /* =================Main================= */
 .main {
   background-color: var(--dark-color);
   color: var(--light-color);
-  padding-bottom: 70px;
+  /* padding-bottom: 70px; */
+  /* padding: 25px 50px; */
 }
 
 /* .main .main-container {
@@ -99,10 +119,17 @@ ul.grid {
   font-size: 14px;
 }
 
+.hover-shadow:hover {
+  /* ???? */
+  box-shadow: 0 4px 8px 0 rgba(0, 212, 28, 0.6),
+    0 6px 20px 0 rgba(55, 252, 6, 0.5);
+}
+
 /* =================Contact================= */
 .contact {
   background-color: var(--dark-color);
   color: var(--light-color);
+  padding: 25px 50px;
 }
 
 input[type="text"],
@@ -142,12 +169,13 @@ input[type="submit"]:hover {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .modal-content {
   position: relative;
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
   margin: 20% auto;
   padding: 20px;
   width: 60%;
@@ -158,18 +186,53 @@ input[type="submit"]:hover {
 
 .closeBtn {
   position: absolute;
-  color: var(--dark-color);
+  color: var(--green-color);
   float: right;
-  font-size: 30px;
+  font-size: 40px;
   top: 5px;
   right: 20px;
 }
 
 .closeBtn:hover,
 .closeBtn:focus {
-  color: #000;
+  color: var(--green-color);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 800;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  margin-left: -20px;
+  color: var(--green-color);
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(93, 184, 93, 0.3);
+}
+
+.numbertext {
+  color: var(--green-color);
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
 @keyframes modalOpen {
@@ -186,6 +249,10 @@ input[type="submit"]:hover {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0px 40px;
+}
+
+.container {
+  padding: 25px 50px;
 }
 
 .flex {
