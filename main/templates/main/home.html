@@ -47,6 +47,48 @@
   </div>
 </section>
 
+<!--  -->
+<!-- Pseudo -->
+<section class="main container">
+  <div class="main-container shadow">
+    <h1>Portfolio & Past Projects</h1>
+    <p class="border-bot">Here are some of my recent web development project:</p>
+    <ul class="grid">
+      {% for project in projects %}
+      <li class="project  hover-shadow">
+        <img class="thumbnail" src="{{project.thumbnail.url}}" alt="Yuri Sorokins">
+        <div class="proj-preview">
+          <h2 class="proj-title">{{project.h1}}</h2>
+          <p class="proj-intro">{{project.intro}}</p>
+          <h6>'{{ forloop.counter }}'</h6>
+          <button class="modalBtn btn" onclick="modalOpen();currentSlide( '{{ forloop.counter }}' )">More Info</button>
+        </div>
+      </li>
+      {% endfor %}
+      <li class="project  hover-shadow">
+        <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
+        <div class="proj-preview">
+          <h2 class="proj-title">Furniture For You</h2>
+          <p class="proj-intro">Website for a bespoke furniture makers.</p>
+          <button class="modalBtn btn" onclick="modalOpen();currentSlide(2)">More Info</button>
+        </div>
+      </li>
+      <li class="project  hover-shadow">
+        <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins">
+        <div class="proj-preview">
+          <h2 class="proj-title">My portfolio webpage</h2>
+          <p class="proj-intro">Brief site to showcase my projects.</p>
+          <button class="modalBtn btn" onclick="modalOpen();currentSlide(3)">More Info</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!--  -->
+
 <!-- Main -->
 <section class="main container">
   <div class="main-container shadow">
@@ -86,17 +128,22 @@
 
   <div class="modal-content">
 
+    {% for project in projects %}
     <div class="mySlides">
       <span class="closeBtn" onclick="modalClose()">&times;</span>
-      <div class="numbertext">1 / 3</div>
-      <h1 class="flex">Request a Design Visit</h1>
-      <img class="thumbnail" src="{% static 'main/avatar.jpg' %}" alt="Yuri Sorokins" style="width:100%">
-      <h1>BlaBla</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias maxime nam temporibus voluptas 
-        cum magni ipsa laboriosam dolores praesentium qua aspernatur voluptatem, necessitatibus laudantium 
-        repellat deleniti reprehenderit magnam cupiditate dignissimos.</p>
+      <div class="numbertext">{{ forloop.counter }} / {{ total_projects }}</div>
+      <h1 class="flex">{{ project.h1 }}</h1>
+      <img class="" src="{{project.image.url}}" alt="Yuri Sorokins" style="width:100%">
+      <h2 class="made-with" >Made with:&#160; {{ project.made_with}} </h2>
+      <a class="project-link" href="{{project.source_file}}">Source Files</a>
+      <a class="project-link" href="{{project.live_demo}}">Live Demo</a>
+      <p>{{ project.paragraph|safe}} </p>
+      <div class="project-date">
+        <p>Created:&#160; {{ project.created_at|date:"M d, Y"}} </p>
+        <p>Last updated:&#160; {{ project.updated_at|date:"M d, Y"}} </p>
+      </div>
     </div>
-    
+    {% endfor %}
     <div class="mySlides">
       <span class="closeBtn" onclick="modalClose()">&times;</span>
       <div class="numbertext">2 / 3</div>
@@ -159,9 +206,10 @@
 >>>contact form (furn4u) +
 >>>modal for projects +
 >>>quote under name +
->>>succees message once form submited
->>> change to postgres
->>> conect projects to DB and make dynamic
+>>> change to postgres +-
+>>> conect projects to DB and make dynamic +-
+>>> send email if form submited
+>>>succees message once form submited, or failed
 >>>responsive
 
 

@@ -1,8 +1,15 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Project
+from django.contrib import messages
 
 
 def home(request):
+    projects = Project.objects.all()
+    if request.method == "POST":
+        messages.success(request, 'Form submission successful')
+    context = {
+        'projects': projects,
+        'total_projects': len(projects),
+    }
 
-    return render(request, 'main/home.html')
+    return render(request, 'main/home.html', context)

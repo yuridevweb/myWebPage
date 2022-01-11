@@ -119,6 +119,25 @@ ul.grid {
   font-size: 14px;
 }
 
+.made-with {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.project-date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.project-link {
+  color: var(--green-color);
+  font-size: 15px;
+  font-weight: 300;
+  margin-right: 20px;
+}
+
 .hover-shadow:hover {
   /* ???? */
   box-shadow: 0 4px 8px 0 rgba(0, 212, 28, 0.6),
@@ -290,6 +309,11 @@ input[type="submit"]:hover {
 
 .border-bot {
   border-bottom: 2px solid var(--green-color);
+}
+
+.message {
+  background-color: var(--green-color);
+  color: var(--dark-color);
 }
 
 /* ==================Tablets and under=============== */
