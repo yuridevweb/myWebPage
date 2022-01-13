@@ -38,3 +38,11 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 
 }
+
+function validateName() {
+  let form_name = document.forms["myForm"]["name"].value;
+  if (form_name.length < 3)  {
+    alert("Name must be at least three characters long");
+    return false;
+  }
+}
