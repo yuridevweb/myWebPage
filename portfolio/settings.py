@@ -28,7 +28,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['167.172.61.6']
 
 
 # Application definition
@@ -79,13 +79,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': '0000',
+        'USER': 'portfoliouser',
+        'PASSWORD': 'portfolio123',
         'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
