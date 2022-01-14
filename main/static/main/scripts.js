@@ -24,7 +24,7 @@ function plusSlides(n) {
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides(slideIndex = parseInt(n));
 }
 
 function showSlides(n) {
@@ -35,10 +35,10 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slides[slideIndex-1].style.display = "block";
-
+  slides[slideIndex - 1].style.display = "block";
 }
 
+//Contact form
 function validateName() {
   let form_name = document.forms["myForm"]["name"].value;
   if (form_name.length < 3)  {
@@ -46,3 +46,4 @@ function validateName() {
     return false;
   }
 }
+

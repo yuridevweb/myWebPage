@@ -11,7 +11,7 @@ class Project(models.Model):
     intro = models.TextField(
         max_length=500, help_text="Brief discription of the project")
     made_with = models.CharField(
-        max_length=240, help_text="Technologies used for building  a project")
+        max_length=240, help_text="Technologies used for building  a project, separate with #")
     paragraph = models.TextField(
         help_text="Full discription of the project. Use HTML tags to style a text.")
     image = models.FileField(upload_to='projects',

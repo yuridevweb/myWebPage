@@ -7,6 +7,8 @@ from django.conf import settings
 
 def home(request):
     projects = Project.objects.all()
+    for p in projects:
+        print(p.made_with)
 
     if request.method == "POST":
         form_data = list(request.POST.items())
